@@ -1,0 +1,14 @@
+<h1>Caitlin's Tax App</h1>
+
+<p>Sign in!</p>
+<%= form_for @user do |f| %>
+
+  <%= f.text_field :username, placeholder: "username" %>
+ 
+  <%= f.password_field :password, placeholder: "password" %>
+ 
+  <%= f.submit value="Log in!" %>
+
+<% end %>
+
+<p>Create new user</p>
