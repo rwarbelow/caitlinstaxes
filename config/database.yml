@@ -7,7 +7,7 @@ development:
 
 production:
   adapter: postgresql
-  database: caitlin_tax_production
+  database: caitlin_tax_development
   pool: 5
   username:
   password:

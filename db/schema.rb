@@ -11,6 +11,61 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131006195204) do
+ActiveRecord::Schema.define(:version => 20131006230048) do
+
+  create_table "expense_categories", :force => true do |t|
+    t.string   "category_name"
+    t.integer  "user_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "expense_items", :force => true do |t|
+    t.date    "date"
+    t.string  "item"
+    t.integer "expense_category_id"
+    t.float   "amount"
+    t.integer "expense_source_id"
+    t.string  "comment"
+  end
+
+  create_table "expense_sources", :force => true do |t|
+    t.string   "source"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "income_categories", :force => true do |t|
+    t.string   "category_name"
+    t.integer  "user_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "income_items", :force => true do |t|
+    t.date     "date"
+    t.string   "item"
+    t.integer  "income_category_id"
+    t.float    "amount"
+    t.integer  "income_method_id"
+    t.string   "comment"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  create_table "income_methods", :force => true do |t|
+    t.string   "method"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "username",        :null => false
+    t.string   "password_digest", :null => false
+    t.string   "first_name",      :null => false
+    t.string   "last_name",       :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
 end
