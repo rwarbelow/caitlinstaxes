@@ -20,10 +20,12 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
-
+gem 'prawn'
+gem "therubyracer"
+gem "less-rails"
+gem "twitter-bootstrap-rails"
 
 group :development, :test do
-    gem 'twitter-bootstrap-rails'
     gem 'bootstrap-sass'
   end
 

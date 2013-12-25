@@ -12,6 +12,30 @@
   *zoom: 1;
 }
 
+.box-container {
+
+}
+
+.expense {
+  background-color: #ffcc77;
+}
+
+.income {
+  background-color: #99ffcc;
+}
+
+.overview {
+  background-color: #ffaaff;
+}
+
+.box {
+  width: 230px;
+  border: 2px solid black;
+  padding: 10px;
+  display: inline-block;
+  margin-right: 2px;
+}
+
 .clearfix:before,
 .clearfix:after {
   display: table;

@@ -1,14 +1,16 @@
-<h1>Caitlin's Tax App</h1>
+<div class ='money'>
+	<div class="text-center">
+		<div class="well">
+			<%= form_for @user, url: login_path do |f| %>
 
-<p>Sign in!</p>
-<%= form_for @user, url: login_path do |f| %>
+			  <%= f.text_field :username, placeholder: "username" %>
+			  <br>
+			  <%= f.password_field :password, placeholder: "password" %>
+			  <br>
+			 
+			  <%= f.submit value="Log in!", :class => "btn btn-primary"%>
 
-  <%= f.text_field :username, placeholder: "username" %>
- 
-  <%= f.password_field :password, placeholder: "password" %>
- 
-  <%= f.submit value="Log in!" %>
-
-<% end %>
-
-<p>Create new user</p>
+			<% end %>
+		</div>
+	</div>
+</div>

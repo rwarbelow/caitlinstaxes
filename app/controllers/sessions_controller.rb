@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-
+  include ApplicationHelper
 	def new
 		@user = User.new
 	end
@@ -15,4 +15,11 @@ class SessionsController < ApplicationController
       render 'sessions/new'
     end
   end
+
+  def destroy
+   session.clear
+   flash[:notice] = "Logout Successful."
+   redirect_to root_path
+  end
+
 end

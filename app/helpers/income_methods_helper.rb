@@ -1,0 +1,2 @@
+module IncomeMethodsHelper
+end

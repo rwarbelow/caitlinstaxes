@@ -1,0 +1,48 @@
+<%= form_for @expense_item, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :date, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :date, :class => 'date_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :item, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :item, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :expense_category_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select(:expense_source_id, @source_array, {:include_blank => 'Select a source'}) %><br/>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :amount, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :amount, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :expense_source_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select(:expense_source_id, @source_array, {:include_blank => 'Select a source'}) %><br/>  <br>
+  </div>
+  <div class="control-group">
+    <%= f.label :comment, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :comment, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <%= f.hidden_field :user_id, :class => 'number_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                expense_items_path, :class => 'btn' %>
+  </div>
+<% end %>
