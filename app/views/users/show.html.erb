@@ -1,5 +1,4 @@
-<h3 class="text-center">Welcome, <%= @user.first_name %>!</h3>
-<br>
+<div class="text-center">
   <div class="box expense text-center">
     <h4><%= link_to "Expenses", expense_items_path %></h4>
     <hr>
@@ -13,11 +12,12 @@
     <hr>
   </div>
 </div>
-<div style="height:200px">&nbsp;</div>
-<div style="margin-left:180px">
+<div style="height:35px">&nbsp;</div>
+<div class="text-center">
+  <span>Change scope:</span>
   <%= form_tag @path, method: :get do %>
-    <%= text_field_tag :start_date, nil, :placeholder => "start date: YYYY-MM-DD", :width => "100" %> <br>
-    <%= text_field_tag :end_date, nil, :placeholder => "end date: YYYY-MM-DD", :width => "100" %> <br>
-    <%= submit_tag "Show", class: 'btn' %><div class="box-container text-center">
+    <%= text_field_tag :start_date, nil, :placeholder => "start date: YYYY-MM-DD", :width => "100" %>
+    <%= text_field_tag :end_date, nil, :placeholder => "end date: YYYY-MM-DD", :width => "100" %>
+    <%= submit_tag "Show", class: 'btn btn-mini' %><div class="box-container text-center">
     <% end %>
 </div>

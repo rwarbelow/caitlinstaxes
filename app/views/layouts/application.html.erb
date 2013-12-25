@@ -12,7 +12,9 @@
     <main role="main">
       <div class="container">
         <% if current_user %>
-        <div style='float:right;'><%= link_to "Settings", logout_path %> | <%= link_to "Logout", logout_path, :method => 'delete' %></div>
+        <div style='float:right;'>        
+          <strong><%= current_user.first_name %> <%= current_user.last_name %></strong><br>
+          <%= link_to "Settings", logout_path %> | <%= link_to "Logout", logout_path, :method => 'delete' %></div>
           <div class='text-center'><%= link_to image_tag('logo.png'), user_path(current_user) %></div>
         <% else %>
           <div class='text-center'><%= image_tag('logo.png') %></div>
