@@ -1,11 +1,15 @@
 <%- model_class = IncomeItem -%>
+<div class='text-right'>
+  <%= link_to "Income Categories", new_income_category_path %> | 
+  <%= link_to "Income Methods", new_income_method_path %>
+</div>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:date) %></th>
+      <th><%= link_to "Date", :sort => "date" %></th>
       <th><%= model_class.human_attribute_name(:item) %></th>
       <th>Category</th>
       <th><%= model_class.human_attribute_name(:amount) %></th>

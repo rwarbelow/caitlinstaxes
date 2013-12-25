@@ -15,3 +15,8 @@
 //= require twitter/bootstrap
 //= require_tree .
 //= require bootstrap
+
+
+$(".flash").fadeOut(1500, function () {
+   11    $(this).remove();
+   12    });

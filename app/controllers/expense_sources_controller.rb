@@ -2,7 +2,7 @@ class ExpenseSourcesController < ApplicationController
   # GET /expense_sources
   # GET /expense_sources.json
   def index
-    @expense_sources = ExpenseSource.all
+    @expense_sources = ExpenseSource.where(:user_id => current_user.id)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,6 +25,7 @@ class ExpenseSourcesController < ApplicationController
   # GET /expense_sources/new.json
   def new
     @expense_source = ExpenseSource.new
+    @expense_sources = ExpenseSource.where(:user_id => current_user.id)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -44,7 +45,7 @@ class ExpenseSourcesController < ApplicationController
 
     respond_to do |format|
       if @expense_source.save
-        format.html { redirect_to @expense_source, notice: 'Expense source was successfully created.' }
+        format.html { redirect_to expense_items_path, notice: "#{@expense_source.source} was successfully created as an expense source." }
         format.json { render json: @expense_source, status: :created, location: @expense_source }
       else
         format.html { render action: "new" }

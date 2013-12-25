@@ -2,7 +2,7 @@
   <div class="control-group">
     <%= f.label :date, :class => 'control-label' %>
     <div class="controls">
-      <%= f.date_select :date, :class => 'date_select' %>
+      <%= f.date_select :date, :class => "date_select" %>
     </div>
   </div>
   <div class="control-group">
@@ -14,7 +14,7 @@
   <div class="control-group">
     <%= f.label :expense_category_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.select(:expense_source_id, @source_array, {:include_blank => 'Select a source'}) %><br/>
+      <%= f.select(:expense_source_id, @category_array, {:include_blank => 'Select a category'}) %><br/>
     </div>
   </div>
   <div class="control-group">

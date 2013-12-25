@@ -2,7 +2,7 @@
 	<div class="text-center">
 		<div class="well">
 			<% if flash[:errors] %>
-				<%= flash[:errors] %>
+				<strong><%= flash[:errors] %></strong><br><br>
 			<% end %>
 			<%= form_for @user, url: login_path do |f| %>
 

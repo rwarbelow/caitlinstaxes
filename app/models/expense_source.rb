@@ -1,3 +1,3 @@
 class ExpenseSource < ActiveRecord::Base
-  # attr_accessible :title, :body
+  attr_accessible :source, :user_id
 end

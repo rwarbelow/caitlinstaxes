@@ -2,7 +2,7 @@ class IncomeItemsController < ApplicationController
   # GET /income_items
   # GET /income_items.json
   def index
-    @income_items = IncomeItem.all
+    @income_items = IncomeItem.where(:user_id => current_user.id).order(params[:sort])
 
     respond_to do |format|
       format.html # index.html.erb
