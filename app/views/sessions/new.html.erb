@@ -2,9 +2,7 @@
 	<div class="text-center">
 		<div class="well">
 			<% if flash[:errors] %>
-				<% flash[:errors].each do |f| %>
-					<%= f %>
-				<% end %>
+				<%= flash[:errors] %>
 			<% end %>
 			<%= form_for @user, url: login_path do |f| %>
 
