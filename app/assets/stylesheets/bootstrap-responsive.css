@@ -33,6 +33,7 @@
   width: 30%;
   border: 4px solid #8Ef13c;
   padding: 10px;
+  min-height: 100px;
   display: inline-block;
 }
 

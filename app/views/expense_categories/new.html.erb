@@ -1,8 +1,5 @@
 <%- model_class = ExpenseCategory -%>
-<div class="well">
-	<h3>New Expense Category</h3>
-<%= render :partial => 'form' %>
-</div>
+<h3>Current Expense Categories</h3>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -29,3 +26,6 @@
     <% end %>
   </tbody>
 </table>
+<hr>
+	<h4>Create New Expense Category</h4>
+<%= render :partial => 'form' %>

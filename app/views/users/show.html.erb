@@ -2,6 +2,14 @@
   <div class="box expense text-center">
     <h4><%= link_to "Expenses", expense_items_path %></h4>
     <hr>
+    <table class='text-left'>
+    <% @expense_categories.each do |e| %>
+        <tr>
+          <td><%= e.category_name %></td>
+          <td>&nbsp;&nbsp;</td>
+          <td><%= e.total %></td>
+      <% end %>
+    </table>
   </div>
   <div class="box income text-center">
     <h4><%= link_to "Income", income_items_path %></h4>

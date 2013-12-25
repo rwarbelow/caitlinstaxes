@@ -14,7 +14,7 @@
   <div class="control-group">
     <%= f.label :expense_category_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.select(:expense_source_id, @category_array, {:include_blank => 'Select a category'}) %><br/>
+      <%= f.select(:expense_category_id, @category_array, {:include_blank => 'Select a category'}) %><br/>
     </div>
   </div>
   <div class="control-group">
@@ -36,7 +36,7 @@
   </div>
   <div class="control-group">
     <div class="controls">
-      <%= f.hidden_field :user_id, :class => 'number_field' %>
+      <%= f.hidden_field :user_id, :value => current_user.id %>
     </div>
   </div>
 

@@ -26,6 +26,8 @@ class ExpenseItemsController < ApplicationController
   def new
     @expense_item = ExpenseItem.new
     @source_array = ExpenseSource.where(:user_id => current_user.id).map { |source| ["#{source.source}", source.id] }
+    p "*"*80
+    p @source_array
     @category_array = ExpenseCategory.where(:user_id => current_user.id).map { |category| ["#{category.category_name}", category.id] }
     respond_to do |format|
       format.html # new.html.erb
@@ -41,6 +43,8 @@ class ExpenseItemsController < ApplicationController
   # POST /expense_items
   # POST /expense_items.json
   def create
+    p "&"*80
+    p params
     @expense_item = ExpenseItem.new(params[:expense_item])
 
     respond_to do |format|

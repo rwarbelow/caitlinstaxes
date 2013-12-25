@@ -2,6 +2,9 @@ class UsersController < ApplicationController
 	include ApplicationHelper
 	before_filter :set_user
 	def show
+		@income_items = IncomeItem.where(:user_id => current_user.id)
+		@expense_items = ExpenseItem.where(:user_id => current_user.id)
+		@expense_categories = ExpenseCategory.where(:user_id => current_user.id)
 	end
 
 	def update
