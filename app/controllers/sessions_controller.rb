@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       redirect_to @user
     else
       @user = User.new
-      flash[:errors] = "Invalid Login"
+      flash[:errors] = "Invalid Login. Please try again."
       render 'sessions/new'
     end
   end
